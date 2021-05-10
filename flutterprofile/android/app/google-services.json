@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856257918463",
+    "project_id": "travelnepal-bd172",
+    "storage_bucket": "travelnepal-bd172.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856257918463:android:a17e610fb41088a6e0a3ca",
+        "android_client_info": {
+          "package_name": "com.example.flutterprofile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856257918463-n1fh92j9d2oqnsadt4n3463nevgk38hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC6-ovsJZR_mI6JgTL5410WacU3Rj6Nh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856257918463-n1fh92j9d2oqnsadt4n3463nevgk38hv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
