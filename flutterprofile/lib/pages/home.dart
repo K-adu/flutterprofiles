@@ -5,6 +5,7 @@ import 'package:flutterprofile/pages/profile.dart';
 import 'package:flutterprofile/pages/search.dart';
 import 'package:flutterprofile/pages/timeline.dart';
 import 'package:flutterprofile/pages/upload.dart';
+import 'package:flutterprofile/screens/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -76,7 +77,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         children: <Widget>[
-          Timeline(),
+          HomeScreen(),
           ActivityFeed(),
           // Upload(),
           Search(),
