@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterprofile/models/user.dart';
 import 'package:flutterprofile/pages/activity_feed.dart';
 import 'package:flutterprofile/pages/create_account.dart';
 import 'package:flutterprofile/pages/profile.dart';
@@ -12,6 +13,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 final GoogleSignIn googleSignIn = GoogleSignIn();
 final usersRef = FirebaseFirestore.instance.collection('users');
 final DateTime timestamp = DateTime.now();
+
+User currentUser;
 
 class Home extends StatefulWidget {
   @override
@@ -55,7 +58,7 @@ class _HomeState extends State<Home> {
   createUserInFirestore() async {
     //check if user exists in users collection in database(addoridnt to id)
     final GoogleSignInAccount user = googleSignIn.currentUser;
-    final DocumentSnapshot doc = await usersRef.doc(user.id).get();
+    DocumentSnapshot doc = await usersRef.doc(user.id).get();
 
     // if users !=exist then take to create acocunt page
 
@@ -72,7 +75,13 @@ class _HomeState extends State<Home> {
         "bio": "",
         "timestamp": timestamp,
       });
+
+      doc = await usersRef.doc(user.id).get();
     }
+
+    currentUser = User.fromDocument(doc);
+    print(currentUser);
+    print(currentUser.username);
   }
 
   @override
@@ -123,13 +132,18 @@ class _HomeState extends State<Home> {
         onTap: onTap,
         activeColor: Theme.of(context).primaryColor,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
           BottomNavigationBarItem(
-              icon: Icon(Icons.search), title: Text("Explore")),
+            icon: Icon(Icons.home),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_border), title: Text("Trips")),
+            icon: Icon(Icons.favorite_border),
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle), title: Text("Profile")),
+            icon: Icon(Icons.search),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+          ),
         ],
       ),
     );
