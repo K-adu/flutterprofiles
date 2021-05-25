@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprofile/models/user.dart';
@@ -7,13 +10,14 @@ import 'package:flutterprofile/pages/create_account.dart';
 import 'package:flutterprofile/pages/profile.dart';
 import 'package:flutterprofile/pages/search.dart';
 import 'package:flutterprofile/pages/timeline.dart';
-// import 'package:flutterprofile/pages/upload.dart';
+import 'package:flutterprofile/pages/upload.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:path_provider/path_provider.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
+final Reference storageRef = FirebaseStorage.instance.ref();
 final usersRef = FirebaseFirestore.instance.collection('users');
 final DateTime timestamp = DateTime.now();
-
 User currentUser;
 
 class Home extends StatefulWidget {
@@ -119,7 +123,9 @@ class _HomeState extends State<Home> {
             onPressed: logout,
           ),
           ActivityFeed(),
-          // Upload(),
+          Upload(
+            currentUser: currentUser,
+          ),
           Search(),
           Profile(),
         ],
@@ -134,6 +140,9 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.camera),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),
