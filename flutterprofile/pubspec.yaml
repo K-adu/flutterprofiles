@@ -25,11 +25,10 @@ dependencies:
     sdk: flutter
   cloud_firestore: ^1.0.7
   font_awesome_flutter: ^8.5.0
-  image_picker: ^0.7.4 
+  image_picker: ^0.6.0+9
   firebase_storage: ^8.0.4 
   firebase_auth: ^1.0.2
   google_sign_in: ^5.0.2
-  geolocator: ^7.0.2
   uuid: ^3.0.4
   image: ^3.0.2
   animator: ^3.0.0
