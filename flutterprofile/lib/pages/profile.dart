@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterprofile/models/user.dart';
 import 'package:flutterprofile/pages/edit_profile.dart';
 import 'package:flutterprofile/pages/home.dart';
+import 'package:flutterprofile/pages/upload.dart';
 import 'package:flutterprofile/widgets/header.dart';
 import 'package:flutterprofile/widgets/post.dart';
 import 'package:flutterprofile/widgets/post_tile.dart';
@@ -87,34 +88,94 @@ class _ProfileState extends State<Profile> {
             builder: (context) => EditProfile(currentUserId: currentUserId)));
   }
 
-  Container buildButton({String text, Function function}) {
+  upload() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => Upload(currentUser: currentUser)));
+  }
+
+  Container buildButton({String text, Function function, Function function1}) {
+    // return Container(
+    //   padding: EdgeInsets.only(top: 2.0),
+    //   child: FlatButton(
+    //     onPressed: function,
+    //     child: Container(
+    //       width: 250,
+    //       height: 27,
+    //       child: Text(
+    //         text,{Function function}
+
+    //         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+    //       ),
+    //       alignment: Alignment.center,
+    //       decoration: BoxDecoration(
+    //           color: Colors.blue,
+    //           border: Border.all(color: Colors.blue),
+    //           borderRadius: BorderRadius.circular(5.0)),
+    //     ),
+    //   ),
+    // );
     return Container(
-      padding: EdgeInsets.only(top: 2.0),
-      child: FlatButton(
-        onPressed: function,
-        child: Container(
-          width: 250,
-          height: 27,
-          child: Text(
-            text,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 10,
+            width: 20,
           ),
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.blue,
-              border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(5.0)),
-        ),
+          ClipOval(
+            child: Material(
+              color: Colors.green,
+              child: InkWell(
+                splashColor: Colors.red,
+                child: SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: Icon(
+                    Icons.account_box,
+                    size: 30,
+                  ),
+                ),
+                onTap: function,
+              ),
+            ),
+          ),
+          SizedBox(width: 50),
+          ClipOval(
+            child: Material(
+              color: Colors.green,
+              child: InkWell(
+                splashColor: Colors.red,
+                child: SizedBox(
+                  width: 50,
+                  height: 50,
+                  child: Icon(
+                    Icons.book_online,
+                    size: 30,
+                  ),
+                ),
+                onTap: function1,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
+
+  // upload() {
+  //   Upload(
+  //     currentUser: currentUser,
+  //   );
+  // }
 
   buildProfileButton() {
     //return Text("Profile Button");
     // viewing your own profile - should show edit profile button
     bool isProfileOwner = currentUserId == widget.profileId;
     if (isProfileOwner) {
-      return buildButton(text: "Edit Profile", function: editProfile);
+      return buildButton(
+          text: "Edit Profile", function: editProfile, function1: upload);
     }
   }
 

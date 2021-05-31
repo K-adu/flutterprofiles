@@ -34,7 +34,7 @@ class _SearchState extends State<Search> {
       title: TextFormField(
         controller: searchController,
         decoration: InputDecoration(
-          hintText: "Search for a user...",
+          hintText: "Search for a hotel...",
           filled: true,
           prefixIcon: Icon(Icons.account_box, size: 28),
           suffixIcon: IconButton(

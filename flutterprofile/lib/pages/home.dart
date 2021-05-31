@@ -124,9 +124,10 @@ class _HomeState extends State<Home> {
             onPressed: logout,
           ),
           ActivityFeed(),
-          Upload(
-            currentUser: currentUser,
-          ),
+          // Upload(
+          //   currentUser: currentUser,
+          // ),
+          // Map(),
           Search(),
           Profile(profileId: currentUser?.id),
         ],
@@ -138,29 +139,24 @@ class _HomeState extends State<Home> {
         currentIndex: pageIndex,
         onTap: onTap,
         activeColor: Theme.of(context).primaryColor,
-        items: [
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            backgroundColor: Colors.green,
+            icon: Icon(
+              Icons.home,
+            ),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.camera),
-          ),
+              icon: Icon(Icons.book_outlined), label: 'Online Booking'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-          ),
+              icon: Icon(Icons.maps_ugc_rounded), label: 'Map'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-          ),
+              icon: Icon(Icons.account_circle), label: 'Profile'),
         ],
       ),
     );
-    // return RaisedButton(
-    //   child: Text('Logout'),
-    //   onPressed: logout,
-    // );
   }
 
   Scaffold buildUnAuthScreen() {

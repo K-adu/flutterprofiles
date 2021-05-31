@@ -15,6 +15,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 import 'package:image/image.dart' as Im;
+import 'package:flutterprofile/pages/profile.dart';
 
 class Upload extends StatefulWidget {
   final User currentUser;
