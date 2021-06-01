@@ -1,15 +1,15 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// class Map  extends StatefulWidget {
-//   @override
-//   _State createState() => _State();
-// }
-
-// class _Map extends State<> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-      
-//     );
-//   }
-// }
+class Map extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Map Page',
+          style: TextStyle(fontSize: 50.0, color: Colors.black),
+        ),
+      ),
+    );
+  }
+}

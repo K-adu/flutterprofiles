@@ -59,7 +59,7 @@ class _SearchState extends State<Search> {
               height: orientaion == Orientation.portrait ? 300 : 200,
             ),
             Text(
-              "Find Users",
+              "Find Hotels",
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: Colors.white,

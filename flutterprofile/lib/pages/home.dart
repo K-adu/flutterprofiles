@@ -11,8 +11,10 @@ import 'package:flutterprofile/pages/profile.dart';
 import 'package:flutterprofile/pages/search.dart';
 import 'package:flutterprofile/pages/timeline.dart';
 import 'package:flutterprofile/pages/upload.dart';
+import 'package:flutterprofile/screens/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:flutterprofile/pages/Map.dart';
 
 final GoogleSignIn googleSignIn = GoogleSignIn();
 final Reference storageRef = FirebaseStorage.instance.ref();
@@ -118,17 +120,17 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         children: <Widget>[
-          // Timeline(),
-          RaisedButton(
-            child: Text('Logout'),
-            onPressed: logout,
-          ),
+          HomeScreen(),
+          // RaisedButton(
+          //   child: Text('Logout'),
+          //   onPressed: logout,
+          // ),
           ActivityFeed(),
           // Upload(
           //   currentUser: currentUser,
           // ),
-          // Map(),
           Search(),
+          Map(),
           Profile(profileId: currentUser?.id),
         ],
         controller: pageController,
@@ -141,7 +143,6 @@ class _HomeState extends State<Home> {
         activeColor: Theme.of(context).primaryColor,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            backgroundColor: Colors.green,
             icon: Icon(
               Icons.home,
             ),

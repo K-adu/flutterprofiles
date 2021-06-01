@@ -4,7 +4,7 @@ import 'package:animator/animator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprofile/models/user.dart';
-import 'package:flutterprofile/pages/comments.dart';
+// import 'package:flutterprofile/pages/comments.dart';
 import 'package:flutterprofile/pages/home.dart';
 import 'package:flutterprofile/widgets/custom_image.dart';
 import 'package:flutterprofile/widgets/progress.dart';
@@ -155,27 +155,28 @@ class _PostState extends State<Post> {
   buildPostImage() {
     return GestureDetector(
       onDoubleTap: () => handleLikePost(),
-      // child: Stack(
-      //   alignment: Alignment.center,
-      //   children: <Widget>[
-      //     cachedNetworkImage(mediaUrl),
-      //     // showHeart?
-      //     Animator(
-      //       duration: Duration(milliseconds: 300),
-      //       tween: Tween(begin: 0.8, end: 1.4),
-      //       curve: Curves.elasticOut,
-      //       cycles: 0,
-      //       builder: (anim) => Transform.s(
-      //         scale: anim.value,
-      //         child: Icon(
-      //           Icons.favorite,
-      //           size: 80.0,
-      //           color: Colors.red,
-      //         ),
-      //       ),
-      //     )
-      //         : Text(""),],
-      // ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          cachedNetworkImage(mediaUrl),
+          showHeart
+              ? Animator(
+                  duration: Duration(milliseconds: 300),
+                  tween: Tween(begin: 0.8, end: 1.4),
+                  curve: Curves.elasticOut,
+                  cycles: 0,
+                  // builder: (anim) => Transform.scale(
+                  //   scale: anim.value,
+                  child: Icon(
+                    Icons.favorite,
+                    size: 80.0,
+                    color: Colors.red,
+                  ),
+                  // ),
+                )
+              : Text(""),
+        ],
+      ),
     );
   }
 
