@@ -4,6 +4,7 @@ import 'package:animator/animator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprofile/models/user.dart';
+import 'package:flutterprofile/pages/comments.dart';
 // import 'package:flutterprofile/pages/comments.dart';
 import 'package:flutterprofile/pages/home.dart';
 import 'package:flutterprofile/widgets/custom_image.dart';
@@ -259,11 +260,8 @@ class _PostState extends State<Post> {
 
 showComments(BuildContext context,
     {String postId, String ownerId, String mediaUrl}) {
-  // Navigator.push(context, MaterialPageRoute(builder: (context){
-  //   return Comments(
-  //     postId: postId,
-  //     postOwnerId: ownerId,
-  //     postMediaUrl: mediaUrl
-  //   );
-  // }));
+  Navigator.push(context, MaterialPageRoute(builder: (context) {
+    return Comments(
+        postId: postId, postOwnerId: ownerId, postMediaUrl: mediaUrl);
+  }));
 }

@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterprofile/models/user.dart';
 import 'package:flutterprofile/pages/activity_feed.dart';
+import 'package:flutterprofile/pages/comments.dart';
 import 'package:flutterprofile/pages/create_account.dart';
 import 'package:flutterprofile/pages/profile.dart';
 import 'package:flutterprofile/pages/search.dart';
@@ -20,6 +21,7 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 final Reference storageRef = FirebaseStorage.instance.ref();
 final usersRef = FirebaseFirestore.instance.collection('users');
 final postsRef = FirebaseFirestore.instance.collection('posts');
+final commentsRef = FirebaseFirestore.instance.collection('comments');
 final DateTime timestamp = DateTime.now();
 User currentUser;
 
