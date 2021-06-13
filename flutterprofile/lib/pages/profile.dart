@@ -1,4 +1,3 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,14 +10,6 @@ import 'package:flutterprofile/widgets/header.dart';
 import 'package:flutterprofile/widgets/post.dart';
 import 'package:flutterprofile/widgets/post_tile.dart';
 import 'package:flutterprofile/widgets/progress.dart';
-// import 'package:flutter_svg/svg.dart';
-// import 'package:flutterprofile/models/user.dart';
-// import 'package:flutterprofile/pages/edit_profile.dart';
-// import 'package:flutterprofile/widgets/header.dart';
-// import 'package:flutterprofile/widgets/post.dart';
-// import 'package:flutterprofile/widgets/post_tile.dart';
-// import 'package:flutterprofile/widgets/progress.dart';
-// import 'home.dart';
 
 class Profile extends StatefulWidget {
   final String profileId;
@@ -96,26 +87,6 @@ class _ProfileState extends State<Profile> {
   }
 
   Container buildButton({String text, Function function, Function function1}) {
-    // return Container(
-    //   padding: EdgeInsets.only(top: 2.0),
-    //   child: FlatButton(
-    //     onPressed: function,
-    //     child: Container(
-    //       width: 250,
-    //       height: 27,
-    //       child: Text(
-    //         text,{Function function}
-
-    //         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-    //       ),
-    //       alignment: Alignment.center,
-    //       decoration: BoxDecoration(
-    //           color: Colors.blue,
-    //           border: Border.all(color: Colors.blue),
-    //           borderRadius: BorderRadius.circular(5.0)),
-    //     ),
-    //   ),
-    // );
     return Container(
       child: Row(
         children: [
@@ -202,15 +173,15 @@ class _ProfileState extends State<Profile> {
                     flex: 1,
                     child: Column(
                       children: <Widget>[
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            buildCountColumn("posts", 0),
-                            buildCountColumn("followers", 0),
-                            buildCountColumn("following", 0)
-                          ],
-                        ),
+                        // Row(
+                        //   mainAxisSize: MainAxisSize.max,
+                        //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        //   children: <Widget>[
+                        //     buildCountColumn("posts", 0),
+                        //     buildCountColumn("followers", 0),
+                        //     buildCountColumn("following", 0)
+                        //   ],
+                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[

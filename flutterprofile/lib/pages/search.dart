@@ -47,31 +47,31 @@ class _SearchState extends State<Search> {
     );
   }
 
-  buildNoContent() {
-    final Orientation orientaion = MediaQuery.of(context).orientation;
-    return Container(
-      child: Center(
-        child: ListView(
-          shrinkWrap: true,
-          children: <Widget>[
-            SvgPicture.asset(
-              'assets/images/search.svg',
-              height: orientaion == Orientation.portrait ? 300 : 200,
-            ),
-            Text(
-              "Find Hotels",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 60),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+  // buildNoContent() {
+  //   final Orientation orientaion = MediaQuery.of(context).orientation;
+  //   return Container(
+  //     child: Center(
+  //       child: ListView(
+  //         shrinkWrap: true,
+  //         children: <Widget>[
+  //           // SvgPicture.asset(
+  //           //   'assets/images/search.svg',
+  //           //   height: orientaion == Orientation.portrait ? 300 : 200,
+  //           // ),
+  //           // Text(
+  //           //   "Find Hotels",
+  //           //   textAlign: TextAlign.center,
+  //           //   style: TextStyle(
+  //           //       color: Colors.white,
+  //           //       fontStyle: FontStyle.italic,
+  //           //       fontWeight: FontWeight.w600,
+  //           //       fontSize: 60),
+  //           // )
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
   buildSearchResults() {
     return FutureBuilder(
@@ -99,8 +99,7 @@ class _SearchState extends State<Search> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor.withOpacity(0.8),
       appBar: buildSearchField(),
-      body:
-          searchResultsFuture == null ? buildNoContent() : buildSearchResults(),
+      body: buildSearchResults(),
     );
   }
 }
@@ -140,4 +139,14 @@ class UserResult extends StatelessWidget {
       ),
     );
   }
+// class SearchTab extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       child:  Column(
+//         children: [],
+//       ),
+//     );
+//   }
+// }
 }

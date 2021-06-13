@@ -8,11 +8,11 @@ import 'package:flutterprofile/models/user.dart';
 import 'package:flutterprofile/pages/activity_feed.dart';
 import 'package:flutterprofile/pages/comments.dart';
 import 'package:flutterprofile/pages/create_account.dart';
+import 'package:flutterprofile/pages/hometab.dart';
 import 'package:flutterprofile/pages/profile.dart';
 import 'package:flutterprofile/pages/search.dart';
 import 'package:flutterprofile/pages/timeline.dart';
 import 'package:flutterprofile/pages/upload.dart';
-import 'package:flutterprofile/screens/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:flutterprofile/pages/Map.dart';
@@ -122,7 +122,8 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: PageView(
         children: <Widget>[
-          HomeScreen(),
+          // HomeScreen(),
+          HomeTab(),
           // RaisedButton(
           //   child: Text('Logout'),
           //   onPressed: logout,
